@@ -9,7 +9,7 @@ Generate randomised reference networks from temporal network data.
 This is currently the only feature implemented. Randomly shuffles the timestamps at which the edge events occurred.
 
 ```bash
-python3 nullify fname folderpath, timeCol, sep, n
+python3 nullify fname folderpath timeCol sep n
 ```
 
 The parameters are:
