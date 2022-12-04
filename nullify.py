@@ -18,6 +18,6 @@ for i in range(n):
 
     # reinsert column and sort
     graph_df[[timeCol]] = time
-    graph_df.sort_values(by=graph_df.columns[timeCol])
+    graph_df.sort_values(by=graph_df.columns[timeCol],inplace=True)
 
     graph_df.to_csv(folderpath+"/shuffled-"+str(i)+".csv",sep=sep,index=False, header=False)
