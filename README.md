@@ -6,15 +6,34 @@ Generate randomised reference networks from temporal network data.
 
 ### Event shuffling
 
-This is currently the only feature implemented. Randomly shuffles the timestamps at which the edge events occurred.
+This is currently the only feature implemented. Randomly shuffles a column (e.g. timestamp, source node, destination node)
 
-```bash
-python3 nullify fname folderpath timeCol sep n
-```
+Create randomised version of a temporal network datafile.
 
-The parameters are:
-* `fname` : the name of the datafile. It is assumed that the file is a csv format where each row contains a source, target and time column and potentially others. The time doesn't need to be any particular format.
-* `folderpath` : folder where the generated datafiles should go to
-* `timeCol` : expected column for the timestamp
-* `sep` : separator for the file
-* `n` number of networks to generate
+positional arguments:
+  filename
+  output_path
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NUMBER, --number NUMBER
+  -s SEP, --separator SEP
+                        Datafile line separator
+  --header              Does datafile contain header
+
+subcommands:
+  valid null models
+
+  {col_shuffle}
+    col_shuffle         Null model based on shuffling contents of a column
+
+    optional arguments:
+  -h, --help            show this help message and exit
+  -cname--column-name [COL_NAME ...]
+                        Name of column to be shuffled
+  -cnum [COL_NUM ...], --column-number [COL_NUM ...]
+                        Number of column to be shuffled
+  --sortby-name SORT_NAME
+                        Column name to sort by
+  --sortby-number SORT_NUM
+                        Column number to sort by
