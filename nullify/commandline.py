@@ -45,4 +45,4 @@ for i in range(args.number):
         df.sort_values(by=args.sort_name, inplace=True)
     if args.sort_num:
         df.sort_values(by=df.columns[args.sort_num], inplace=True)
-    df.to_csv(args.output_path+"/shuffled-"+str(i)+".csv",sep=args.sep, header = args.header)
+    df.to_csv(args.output_path+"/shuffled-"+str(i)+".csv",sep=args.sep, header = args.header, index=False)
